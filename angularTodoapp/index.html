@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/style.css" rel="stylesheet" />
+</head>
+<body ng-controller="HomeCtrl">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 column"><h1>ToDo App</h1></div>
+            <div class="col-md-8">
+                <div class="input-group input-group-lg addTodo well">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-th-list"></i>
+                    </span>
+                    <input type="text" class="form-control" placeholder="What do you need to do?" ng-model="todo.val">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" ng-click="addNewTodo();">
+                            <i class="glyphicon glyphicon-plus"></i>
+                        </button>
+                    </span>
+                </div><!-- add-todo -->
+                <div ng-repeat="todo in todos" class="input-group input-group-lg todoTasks">
+                    <span class="input-group-addon">
+                        <input ng-model="todo.completed" type="checkbox">
+                    </span>
+                    <input value="{{todo.val}}" ng-class="{finished: todo.completed}" class="form-control" type="text">
+                    <span class="input-group-btn">
+                        <buttton class="btn btn-danger" ng-click="removeTodo($index)">
+                            <i class="glyphicon glyphicon-remove-circle" ng-show="todo.completed"></i>
+                        </buttton>
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-2" column></div>
+        </div>
+    </div>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/HomeCtrl.js"></script>
+
+</body>
+</html>

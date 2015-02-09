@@ -1,0 +1,14 @@
+﻿.addTodo {
+    margin: 10px;
+}
+
+.todoTasks {
+    margin: 10px;
+}
+
+.finished {
+  text-decoration: line-through;
+  color: lightgray;
+  font-style: italic;
+}
+
